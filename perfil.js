@@ -1,21 +1,27 @@
 const botaoAtualizar = document.getElementById("atualizar");
 const botaoTema = document.getElementById("tema");
 const campoNome = document.getElementById("novoNome");
-const nomePerfil = document.getElementById("nomePerfil1");
+const campoProf = document.getElementById ("novaProf")
+const nomePerfil = document.getElementById("nomePerfil");
 const profissao = document.getElementById("profissao");
 const mensagem = document.getElementById("mensagem");
 const perfil = document.querySelector(".perfil");
-botaoAtualizar.addEventListener( "click", function name() {
+botaoAtualizar.addEventListener("click", function name() {
     if (campoNome.value === "") {
         mensagem.textContent = "digite um nome antes de atualizar.";
         return;
+    } else if (campoProf.value === "") {
+        mensagem.textContent = "digite uma profissão antes de atualizar.";
+        return;
     }
- nomePerfil.textContent = campoNome.value
- profissao.textContent = "desenvolvedor (a) web";
- perfil.classList.add("atualizado");
- mensagem.textContent = "perfil atualizado com sucesso!"
-}
-);
+
+    nomePerfil.textContent = campoNome.value;
+    profissao.textContent = campoProf.value;
+    perfil.classList.add("atualizado");
+    mensagem.textContent = "perfil atualizado com sucesso!";
+});
+
+
  botaoTema.addEventListener(
     "click", function () {
         document.body
@@ -28,13 +34,9 @@ botaoAtualizar.addEventListener( "click", function name() {
  nomePerfil.textContent = campoNome.value;
 } 
 );
-campoNome.addEventListener(
-    "focus", function () {
-        campoNome.style.border = "2px solid blue";
-    }
+campoNome.classList.add(
+    "campo-ativo"
 );
-campoNome.addEventListener(
-    "blur", function () {
-        campoNome.style.border = "1px solid gray";
-    }
+campoNome.classList.remove(
+    "campo-ativo"
 );

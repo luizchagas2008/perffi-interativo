@@ -10,7 +10,7 @@ main {
 .perfil{
     width: 320px;
     padding: 25px;
-    background-color: white;
+    background-color: rgb(177, 175, 175);
     border-radius: 12px;
     text-align: center;
 }
@@ -30,4 +30,7 @@ button {
 .tema-escuro {
  background-color: #111;
  color: white;
+}
+.campo-ativo {
+    border: 2px solid blue;
 }
